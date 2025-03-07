@@ -1,4 +1,12 @@
-# HR-Analytics---Attrition
+---
+title: "HR-Analytics---Attrition"
+author: "Aman"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+
+
 
 **1. Introduction**
 This report details the process of analyzing employee attrition using logistic regression. The dataset contains various employee attributes, and our goal is to identify key factors influencing attrition. We perform feature selection using statistical tests and handle class imbalance to improve model performance.
