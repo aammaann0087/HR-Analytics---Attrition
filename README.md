@@ -13,14 +13,23 @@ ________________________________________
 **2. Data Preprocessing**
 
 **2.1 Importing Libraries**
+
 We import necessary libraries for data manipulation, visualization, and model building:
+
 •	pandas, numpy - for data processing
+
 •	seaborn, matplotlib.pyplot - for visualization
+
 •	sklearn.model_selection - for splitting data
+
 •	sklearn.preprocessing - for scaling and encoding data
+
 •	statsmodels.api, scipy.stats - for statistical testing
+
 •	imblearn.over_sampling.SMOTE - for handling class imbalance
+
 •	sklearn.metrics - for evaluating model performance
+
 •	sklearn.linear_model.LogisticRegression - for training the model
 
 **2.2 Loading the Data**
@@ -150,15 +159,12 @@ True Positives (TP) = 23 → Employees correctly predicted to leave.
 
 - **Classification Report**
 
-  Class	              |	Precision	|  Recall   |    F1-score	 |  Support
-
-  No Attrition (0)    |   0.90	  |   0.96	  |    0.93	     |    237
-
-  Attrition (1)       |   0.72	  |   0.48	  |    0.57	     |    48
-
-  Macro Avg           |	  0.81	  |   0.72	  |    0.75	     |    285
-
-  Weighted Avg	      |   0.87    |	  0.88	  |    0.87	     |    285
+| Class              | Precision | Recall | F1-score | Support |
+|--------------------|-----------|--------|----------|---------|
+| No Attrition (0)  | 0.90      | 0.96   | 0.93     | 237     |
+| Attrition (1)     | 0.72      | 0.48   | 0.57     | 48      |
+| **Macro Avg**     | 0.81      | 0.72   | 0.75     | 285     |
+| **Weighted Avg**  | 0.87      | 0.88   | 0.87     | 285     |
 
 Precision (0.72) for attrition means that 72% of employees predicted to leave actually left.
 
