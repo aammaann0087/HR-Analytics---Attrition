@@ -18,21 +18,21 @@ ________________________________________
 
 We import necessary libraries for data manipulation, visualization, and model building:
 
-•	pandas, numpy - for data processing
+•	`pandas, numpy` - for data processing
 
-•	seaborn, matplotlib.pyplot - for visualization
+•	`seaborn, matplotlib.pyplot` - for visualization
 
-•	sklearn.model_selection - for splitting data
+•	`sklearn.model_selection` - for splitting data
 
-•	sklearn.preprocessing - for scaling and encoding data
+•	`sklearn.preprocessing` - for scaling and encoding data
 
-•	statsmodels.api, scipy.stats - for statistical testing
+•	`statsmodels.api, scipy.stats` - for statistical testing
 
-•	imblearn.over_sampling.SMOTE - for handling class imbalance
+•	`imblearn.over_sampling.SMOTE` - for handling class imbalance
 
-•	sklearn.metrics - for evaluating model performance
+•	`sklearn.metrics` - for evaluating model performance
 
-•	sklearn.linear_model.LogisticRegression - for training the model
+•	`sklearn.linear_model.LogisticRegression` - for training the model
 
 **2.2 Loading the Data**
 
@@ -147,9 +147,11 @@ The model achieved an accuracy of 88.07%, indicating a high overall correctness 
 
 - **Confusion Matrix**
 
-  |228  9|
-
-  |25  23|
+| True Negative (TN) | False Positive (FP) |
+|--------------------|--------------------|
+| 228              | 9                  |
+| False Negative (FN) | True Positive (TP) |
+| 25               | 23                 |
 
 True Negatives (TN) = 228 → Employees correctly predicted to stay.
 
