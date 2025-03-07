@@ -8,8 +8,10 @@ Date: "07/03/2025"
 
 
 **1. Introduction**
+
 This report details the process of analyzing employee attrition using logistic regression. The dataset contains various employee attributes, and our goal is to identify key factors influencing attrition. We perform feature selection using statistical tests and handle class imbalance to improve model performance.
 ________________________________________
+
 **2. Data Preprocessing**
 
 **2.1 Importing Libraries**
