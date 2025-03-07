@@ -36,17 +36,17 @@ We import necessary libraries for data manipulation, visualization, and model bu
 
 **2.2 Loading the Data**
 
-df = pd.read_csv('HR_Analytics.csv')
+`df = pd.read_csv('HR_Analytics.csv')`
 
 This loads the dataset into a Pandas DataFrame for further processing.
 
 **2.3 Data Cleaning**
 
-•	Handling Missing Values: df = df.dropna() removes all rows with missing values.
+•	Handling Missing Values: `df = df.dropna()` removes all rows with missing values.
 
-•	Retaining Numeric and Categorical Data: df.select_dtypes(include=['number', 'object']) ensures only relevant data types are used.
+•	Retaining Numeric and Categorical Data: `df.select_dtypes(include=['number', 'object'])` ensures only relevant data types are used.
 
-•	Converting Categorical Variables: df[col] = df[col].astype('category') ensures categorical columns are treated correctly.
+•	Converting Categorical Variables: `df[col] = df[col].astype('category')` ensures categorical columns are treated correctly.
 
 •	Encoding Target Variable: The target variable Attrition is mapped to binary values (Yes = 1, No = 0).
 
@@ -54,7 +54,7 @@ This loads the dataset into a Pandas DataFrame for further processing.
 
 A count plot is created to show the distribution of employees who left versus those who stayed.
 
-sns.countplot(x=y, palette='coolwarm')
+`sns.countplot(x=y, palette='coolwarm')`
 
 This helps us determine whether resampling is needed to balance the dataset.
 ________________________________________
@@ -73,7 +73,7 @@ ANOVA is used to check if numerical variables significantly differ between attri
 
 To prevent multicollinearity, highly correlated features (|correlation| > 0.9) are dropped.
 
-corr_matrix = df_selected.corr()
+`corr_matrix = df_selected.corr()`
 
 A correlation heatmap is plotted to visualize feature relationships.
 ________________________________________
@@ -82,33 +82,33 @@ ________________________________________
 
 **4.1 Encoding Categorical Variables**
 
-•	Binary Variables: Encoded using LabelEncoder().
+•	Binary Variables: Encoded using `LabelEncoder()`.
 
-•	Multi-Class Variables: Converted to dummy variables using pd.get_dummies().
+•	Multi-Class Variables: Converted to dummy variables using `pd.get_dummies()`.
 
 **4.2 Train-Test Split**
 
 The dataset is split into training (80%) and testing (20%) subsets:
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+`X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)`
 
 **4.3 Handling Class Imbalance with SMOTE**
 
 Synthetic Minority Oversampling (SMOTE) is applied to balance the dataset.
 
-smote = SMOTE(random_state=42)
+`smote = SMOTE(random_state=42)`
 
-X_train_sm, y_train_sm = smote.fit_resample(X_train, y_train)
+`X_train_sm, y_train_sm = smote.fit_resample(X_train, y_train)`
 
 **4.4 Feature Scaling**
 
 Standardization is applied to ensure all numerical features have similar distributions.
 
-scaler = StandardScaler()
+`scaler = StandardScaler()`
 
-X_train_scaled = scaler.fit_transform(X_train_sm)
+`X_train_scaled = scaler.fit_transform(X_train_sm)`
 
-X_test_scaled = scaler.transform(X_test)
+`X_test_scaled = scaler.transform(X_test)`
 ________________________________________
 
 **5. Model Training and Evaluation**
@@ -117,19 +117,19 @@ ________________________________________
 
 The logistic regression model is trained on the processed data:
 
-logit_model = LogisticRegression()
+`logit_model = LogisticRegression()`
 
-logit_model.fit(X_train_scaled, y_train_sm)
+`logit_model.fit(X_train_scaled, y_train_sm)`
 
 **5.2 Model Evaluation**
 
 Accuracy, Confusion Matrix, and Classification Report
 
-print("Accuracy:", accuracy_score(y_test, y_pred))
+`print("Accuracy:", accuracy_score(y_test, y_pred))`
 
-print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+`print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))`
 
-print("Classification Report:\n", classification_report(y_test, y_pred))
+`print("Classification Report:\n", classification_report(y_test, y_pred))`
 
 These metrics help assess model performance:
 
@@ -188,9 +188,9 @@ To improve recall for attrition, we could explore additional feature engineering
 
 The ROC curve visualizes the tradeoff between true positives and false positives.
 
-fpr, tpr, _ = roc_curve(y_test, y_pred_prob)
+`fpr, tpr, _ = roc_curve(y_test, y_pred_prob)`
 
-roc_auc = auc(fpr, tpr)
+`roc_auc = auc(fpr, tpr)`
 
 AUC (Area Under Curve) measures model performance; higher values indicate better discrimination.
 ________________________________________
