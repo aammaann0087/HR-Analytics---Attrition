@@ -1,7 +1,7 @@
 ---
-title: "HR-Analytics---Attrition"
-author: "Aman"
-date: "07/03/2025"
+Title: "HR-Analytics---Attrition"
+Author: "Aman"
+Date: "07/03/2025"
 ---
 
 
